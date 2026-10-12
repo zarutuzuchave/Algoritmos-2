@@ -11,3 +11,35 @@
 # Imprima no terminal quais sensores entraram em alerta e exiba os picos máximos e
 # mínimos.
 
+def monitorar_estufa(dados_sensores):
+    sensores_alerta = []
+    
+    maior_temperatura = 0
+    menor_umidade = 100
+    
+    for id_sensor, temperatura, umidade in dados_sensores:
+        if temperatura > maior_temperatura:
+            maior_temperatura = temperatura
+            
+        if umidade < menor_umidade:
+            menor_umidade = umidade
+            
+        if temperatura > 35 or umidade < 20:
+            if id_sensor not in sensores_alerta:
+                sensores_alerta.append(id_sensor)
+                
+    return sensores_alerta, (maior_temperatura, menor_umidade)
+
+
+dados = [
+    (1, 30.0, 45.0),
+    (2, 38.0, 50.0), 
+    (3, 25.0, 15.0), 
+    (4, 40.0, 10.0)  
+]
+
+ids_alerta, picos = monitorar_estufa(dados)
+
+print(f"Sensores em alerta: {ids_alerta}")
+print(f"Maior temperatura: {picos[0]}")
+print(f"Menor umidade: {picos[1]}")

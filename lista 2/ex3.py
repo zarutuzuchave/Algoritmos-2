@@ -9,3 +9,29 @@
 # mais itens diferentes. Execute a função recebendo os retornos e imprima no terminal o
 # valor total da nota fiscal (formatado com R$ e duas casas decimais) e os detalhes do
 # produto que saiu mais caro na conta final.
+def processar_recibo(carrinho):
+    total_compra = 0
+    maior_custo= 0
+    codigo_caro = ""
+    
+    for codigo, quantidade, preco in carrinho:
+        custo_item = quantidade * preco
+        total_compra += custo_item
+        
+        if custo_item > maior_custo:
+            maior_custo = custo_item
+            codigo_caro = codigo
+            
+    return total_compra, (codigo_caro, maior_custo)
+
+carrinho_cliente = [
+    ("001", 3, 15.00),
+    ("002", 1, 50.00),
+    ("003", 5, 12.00),
+    ("004", 2, 8.50)  
+]
+
+total, mais_caro = processar_recibo(carrinho_cliente)
+
+print(f"Valor total da nota fiscal: R$ {total:.2f}")
+print(f"Produto mais caro na conta: Código {mais_caro[0]} total: R$ {mais_caro[1]:.2f}")

@@ -12,3 +12,33 @@
 # o filme mais antigo dentre os que foram filtrados.
 
 
+def filtrar_filmes(catalogo, genero, nota):
+    titulos_aprovados = []
+    filme_mais_antigo = " "
+    menor_ano = 9999
+    
+    for titulo, ano, genero, nota in catalogo:
+        if genero == genero and nota >= nota:
+            titulos_aprovados.append(titulo)
+            
+            if ano < menor_ano:
+                menor_ano = ano
+                filme_mais_antigo = titulo
+                
+    return titulos_aprovados, (filme_mais_antigo, menor_ano)
+
+catalogo_filmes = [
+    ("Matrix", 1999, "Ficcao", 8.7),
+    ("De Volta para o Futuro", 1985, "Ficcao", 8.5),
+    ("Gravidade", 2013, "Ficcao", 7.7),
+    ("O Poderoso Chefao", 1972, "Drama", 9.2),
+    ("Blade Runner", 1982, "Ficcao", 8.1)
+]
+
+alvo = "Ficcao"
+corte = 8.0
+
+titulos, mais_antigo = filtrar_filmes(catalogo_filmes, alvo, corte)
+
+print(f"Filmes aprovados: {titulos}")
+print(f"O filme mais antigo entre os aprovados é: {mais_antigo[0]} do ano de {mais_antigo[1]}")
