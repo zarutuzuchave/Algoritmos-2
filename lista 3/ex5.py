@@ -3,3 +3,17 @@
 # `6.0` pela nota mínima de recuperação `6.0` usando indexação booleana; (c) Remova a
 # nota do índice 4 utilizando `np.delete()`.
 
+import numpy as np
+
+def processar_notas(array):
+    array = np.insert(array, 2, 7.0)
+    print(array)
+
+    array[array < 6.0] = 6.0
+    print(array)
+
+    array = np.delete(array, 4)
+    print(array)
+
+notas = np.array([5.5, 8.0, 4.5, 9.0, 6.5])
+processar_notas(notas)

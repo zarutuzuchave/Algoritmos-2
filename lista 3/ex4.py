@@ -3,3 +3,16 @@
 # array ao quadrado de forma vetorizada (sem laço `for`); (c) Aplique uma filtragem por
 # indexação booleana para extrair apenas os valores superiores a 500.
 
+import numpy as np
+
+def processar_array():
+    array = np.arange(10, 55, 5)
+    print(array)
+
+    quadrados = array ** 2
+    print(quadrados)
+
+    filtrados = quadrados[quadrados > 500]
+    print(filtrados)
+
+processar_array()
