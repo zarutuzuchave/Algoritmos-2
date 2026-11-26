@@ -1,0 +1,1 @@
+# 2 - Faça um programa para cadastrar clientes no arquivo criado no Exercício 1.
