@@ -5,7 +5,7 @@
 
 import numpy as np
 
-def processar_matriz_aleatoria():
+def matriz_aleatoria():
     matriz = np.random.randint(10, 100, (4, 4))
     print(matriz)
 
@@ -18,4 +18,4 @@ def processar_matriz_aleatoria():
     nova_matriz = matriz.reshape(2, 8)
     print(nova_matriz)
 
-processar_matriz_aleatoria()
+matriz_aleatoria()

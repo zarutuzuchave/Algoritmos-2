@@ -6,14 +6,10 @@
 def processar_vetor():
     vetor = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-    # (a) Elementos localizados nos índices pares (índices 0, 2, 4, 6, 8)
-    indices_pares = vetor[0:10:2]
+    indices_pares = vetor[::2]
     
-    # (b) Números ímpares por valor (como a lista começa em 1, os números ímpares 
-    # 1, 3, 5, 7, 9 estão exatamente nos índices pares)
     impares = vetor[0:10:2]
     
-    # (c) Cópia da lista invertida usando fatiamento (step -1)
     invertida = vetor[::-1]
 
     print(f"Lista original: {vetor}")

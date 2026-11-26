@@ -3,7 +3,7 @@
 # array ao quadrado de forma vetorizada (sem laço `for`); (c) Aplique uma filtragem por
 # indexação booleana para extrair apenas os valores superiores a 500.
 
-import numpy as np
+import numpy as np  
 
 def processar_array():
     array = np.arange(10, 55, 5)

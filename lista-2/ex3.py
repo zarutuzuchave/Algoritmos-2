@@ -25,10 +25,10 @@ def processar_recibo(carrinho):
     return total_compra, (codigo_caro, maior_custo)
 
 carrinho_cliente = [
-    ("001", 3, 15.00),
-    ("002", 1, 50.00),
-    ("003", 5, 12.00),
-    ("004", 2, 8.50)  
+    ("1", 3, 15.00),
+    ("2", 1, 50.00),
+    ("3", 5, 12.00),
+    ("4", 2, 8.50)  
 ]
 
 total, mais_caro = processar_recibo(carrinho_cliente)
